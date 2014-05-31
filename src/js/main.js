@@ -40,4 +40,11 @@ $( document ).ready( function() {
       .next().addClass( 'active' );
   });
 
+  [].forEach.call(document.querySelectorAll('.smile-container'), (function () {
+    var sliders = document.querySelectorAll('.slider');
+    return function (smileContainerElem, idx) {
+      smiler(window, smileContainerElem, sliders[idx]);
+    };
+  })());
+
 });
