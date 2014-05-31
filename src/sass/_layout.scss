@@ -6,7 +6,7 @@
 *::before,
 *:after {
   box-sizing: border-box;
-  
+
   -webkit-font-smoothing: antialiased;
 }
 
@@ -18,5 +18,7 @@ ul {
 
 html,
 body {
-
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
 }

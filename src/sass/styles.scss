@@ -27,3 +27,111 @@
 
 // table styling
 @import "_tables.scss";
+
+//===============================================================================
+
+$yellow: hsl( 56, 100, 55 );
+$eye: hsl( 56, 40, 12 );
+
+.panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translate3d(0, 0, 0);
+  top: 0;
+  left: 100%;
+  transition: left 0.25s 0.1s ease-in-out;
+
+  &.done {
+    left: -100%;
+    z-index: 9999;
+  }
+
+  &.active {
+    left: 0;
+    z-index: 9999;
+  }
+}
+
+.background {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.intro {
+  background: #09F;
+}
+
+.thanks {
+  background: #0F9;
+  left: 0 !important;
+}
+
+.smiley {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate( -50%, -50% ) scale(1);
+  top: 50%;
+  left: 50%;
+  background-color: $yellow;
+  z-index: 999;
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: $yellow;
+    transform: translate( -50%, -50% ) scale(1.15);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 50px;
+    top: 60px;
+    width: 26px;
+    border-radius: 50%;
+    background: $eye;
+  }
+
+  &::before {
+    left: 90px;
+  }
+
+  &::after {
+    left: 140px;
+  }
+}
+
+.slider {
+  position: absolute;
+  bottom: 100px;
+  left: 10%;
+  width: 80%;
+  height: 10px;
+  @include appearance;
+  border: 0;
+  border-radius: 5px;
+  background: white;
+
+  &::before {
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+  }
+}
+
+ input[type="range"]::-webkit-slider-thumb{
+   -webkit-appearance:none !important;
+   width: 60px;
+   height: 60px;
+   border: 0;
+   border-radius: 50%;
+   background-color: $yellow;
+ }

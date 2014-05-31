@@ -13,7 +13,7 @@
 }
 
 // APPEARANCE
-// @include apperance;
+// @include appearance;
 @mixin appearance( $value: none ) {
   -webkit-appearance: $value;
      -moz-appearance: $value;
