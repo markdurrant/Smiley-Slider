@@ -32,15 +32,9 @@ $( document ).ready( function() {
     e.stopPropagation();
   });
 
-  // end opy paste
+  // end copy paste
 
-  $( '.intro' ).click( function() {
-    $( this ).removeClass( 'active' )
-      .addClass( 'done' )
-      .next().addClass( 'active' );
-  });
-
-  $( '.smiley' ).click( function() {
+  $( '.smiley, .get-started' ).click( function() {
     $( this ).parent().removeClass( 'active' )
       .addClass( 'done' )
       .next().addClass( 'active' );
