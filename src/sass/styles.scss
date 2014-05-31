@@ -167,6 +167,42 @@ hr {
   }
 }
 
+.smiley-global {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  left: 80%;
+  margin-left: -130px;
+  background-color: $yellow;
+  z-index: 999;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+  &:hover {
+    animation: smile-bounce 0.2s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 50px;
+    top: 60px;
+    width: 26px;
+    border-radius: 50%;
+    background: $eye;
+  }
+
+  &::before {
+    left: 90px;
+  }
+
+  &::after {
+    left: 140px;
+  }
+}
+
 .slider {
   position: absolute;
   bottom: 60px;

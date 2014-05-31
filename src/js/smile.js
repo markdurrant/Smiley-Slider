@@ -32,3 +32,33 @@ window.smiler = function (window, containerElem, sliderElem) {
   sliderElem.addEventListener('mousedown', sliderMouseDownListener);
   sliderElem.addEventListener('mouseup', sliderMouseUpListener);
 };
+
+window.globalSmiler(window, containerElem, numberQuestions) {
+  function getMouthDValue(dValue, newValue) {
+    var pathDReplacerRegExp = /(M[\d]+,[\d]+ Q[\d]+,)-?[\d]+( [\d]+ [\d]+)/ig;
+    var dParts = pathDReplacerRegExp.exec(dValue);
+    return dParts[1] + newValue + dParts[2];
+  }
+
+  var mouthBaseYValue = 0;
+  var mouthBoundValue = 100;
+  var mouthElem = containerElem.querySelector('svg path.mouth');
+
+  return {
+    currentHappiness: 0;
+    submitResponse: function (happinerssValue) {
+      var mouthPathValue;
+      this.currentHappiness += Math.round(mouthBoundValue  * (sliderElem.value / 100));
+
+      if (this.currentHappiness > mouthBoundValue) {
+        mouthPathValue = mouthBoundValue;
+      } else if (this.currentHappiness < -mouthBoundValue) {
+        mouthPathValue = -mouthBoundValue;
+      } else {
+        mouthPathValue = this.currentHappiness;
+      }
+
+      mouthElem.setAttribute('d', getMouthDValue(mouthElem.getAttribute('d'), mouthPathValue));
+    }
+  };
+};
