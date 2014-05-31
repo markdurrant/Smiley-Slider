@@ -36,7 +36,7 @@ $eye: hsl( 56, 60, 10 );
 .panel {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
   top: 0;
   left: 100%;
