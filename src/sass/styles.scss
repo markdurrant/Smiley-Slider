@@ -65,13 +65,15 @@ $eye: hsl( 56, 60, 10 );
   background: $yellow;
   color: $eye;
   font-size: 22px;
-  padding: 80px;
+  padding: 90px;
   font-family: 'Corben', serif;
   text-align: center;
 
   p {
-    margin-top: -6px;
-    margin-bottom: 60px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: -1px;
+    margin-bottom: 55px;
   }
 
   button,
@@ -88,13 +90,22 @@ $eye: hsl( 56, 60, 10 );
 
   a {
     display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
   }
+}
+
+.dia-1,
+.dia-2 {
+  display: block;
+  margin: 0 auto 90px;
 }
 
 .dia-1 {
   width: 495px;
   height: 190px;
-  margin-bottom: 4px;
 }
 
 .dia-2 {
@@ -176,3 +187,14 @@ hr {
    border-radius: 50%;
    background-color: $yellow;
  }
+
+.smile-container {
+  width: 170px;
+  position: absolute;
+  left: 54px;
+  top: 46px;
+
+  path {
+    stroke-width: 26px;
+  }
+}
